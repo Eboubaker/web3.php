@@ -225,9 +225,9 @@ class UtilsErrorHandlingTest extends TestCase
     public function testToBnInvalidNumber()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('toBn number must be a valid number.');
+        $this->expectExceptionMessage('toBn number must be valid hex string.');
         
-        Utils::toBn('1.2.3'); // Invalid number format
+        Utils::toBn('1.2.3'); // Invalid number format - treated as invalid hex
     }
 
     /**

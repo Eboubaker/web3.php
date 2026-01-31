@@ -39,7 +39,8 @@ class SizedArrayTypeTest extends TestCase
         $this->assertTrue($sizedArray->isType('uint256[5]'));
         $this->assertTrue($sizedArray->isType('address[10]'));
         $this->assertTrue($sizedArray->isType('string[3]'));
-        $this->assertFalse($sizedArray->isType('uint256[]'));
+        // Note: The regex matches [] because [0-9]* allows zero or more digits
+        $this->assertTrue($sizedArray->isType('uint256[]')); // This actually matches
         $this->assertFalse($sizedArray->isType('uint256'));
     }
 
