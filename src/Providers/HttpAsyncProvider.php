@@ -102,7 +102,7 @@ class HttpAsyncProvider extends Provider implements IProvider
      */
     public function batch($status)
     {
-        $status = is_bool($status);
+        $status = (bool) $status;
 
         $this->isBatch = $status;
     }
