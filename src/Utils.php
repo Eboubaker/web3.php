@@ -324,8 +324,7 @@ class Utils
             $whole = $whole->multiply($bnt);
 
             // phpseclib3 has pow function available
-            // $base = (new BigNumber(10))->pow(new BigNumber($fractionLength));
-            $base = (new BigNumber(10))->pow($fractionLength);
+            $base = (new BigNumber(10))->pow(new BigNumber($fractionLength));
             $fraction = $fraction->multiply($bnt)->divide($base)[0];
 
             if ($negative1 !== false) {
